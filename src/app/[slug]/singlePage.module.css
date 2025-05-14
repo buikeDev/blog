@@ -1,0 +1,124 @@
+.container {
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.title {
+  font-size: 64px;
+  margin-bottom: 50px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.userImageContainer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.avater {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: var(--softTextColor);
+}
+
+.username {
+  font: 20px;
+  font-weight: 500;
+}
+
+.imageContainer {
+  flex: 1;
+  height: 350px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+}
+
+.posts {
+  flex: 5;
+  margin-top: 60px;
+}
+
+.description p {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1536px) {
+  .title {
+    font-size: 54px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .infoContainer {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    flex: none;
+    width: 100%;
+  }
+
+  .imageContainer .image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .description p {
+    font-size: 18px;
+  }
+
+  .userImageContainer .image {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .description p {
+    font-size: 16px;
+  }
+}
