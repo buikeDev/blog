@@ -7,7 +7,7 @@ export const GET = async (req) => {
   const POST_PER_PAGE = 2;
 
   try {
-    const posts = await prisma.category.findMany({
+    const categories = await prisma.category.findMany({
       take: POST_PER_PAGE,
       skip: POST_PER_PAGE * (page - 1),
     });

@@ -6,24 +6,24 @@ import PropTypes from "prop-types";
 
 export const ThemeContext = createContext();
 
-const getFromLocalStorage = () => {
-  if (typeof window !== "undefined") {
-    const value = localStorage.getItem("theme");
-    return value || "light";
-  }
-};
-
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
-    return getFromLocalStorage();
-  });
-  const toggle = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    // Only runs on the client
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  const toggle = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>

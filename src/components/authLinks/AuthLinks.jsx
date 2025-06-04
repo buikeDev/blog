@@ -20,12 +20,24 @@ export default function AuthLinks() {
           <Link href="/write" className={styles.link}>
             Write
           </Link>
-          <span className={styles.link} onClick={signOut}>
+          <span
+            className={styles.link}
+            onClick={signOut}
+            onKeyDown={(e) => e.key === "Enter" && signOut()}
+            role="button"
+            tabIndex={0}
+          >
             Logout
           </span>
         </>
       )}
-      <div className={styles.burger} onClick={() => setOpen(!open)}>
+      <div
+        className={styles.burger}
+        onClick={() => setOpen(!open)}
+        onKeyDown={(e) => e.key === "Enter" && setOpen(!open)}
+        role="button"
+        tabIndex={0}
+      >
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
