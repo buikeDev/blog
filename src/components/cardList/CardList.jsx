@@ -3,6 +3,7 @@ import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
 import Image from "next/image";
 import Card from "../card/Card";
+import PropTypes from "prop-types";
 
 const getData = async ({ page }) => {
   const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
@@ -32,3 +33,7 @@ export default async function CardList({ page }) {
     </div>
   );
 }
+
+CardList.propTypes = {
+  page: PropTypes.number.isRequired,
+};

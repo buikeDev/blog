@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import styles from "./themeToggle.module.css";
 import Image from "next/image";
 import { useContext } from "react";
@@ -11,6 +12,9 @@ export default function ThemeToggle() {
     <div
       className={styles.container}
       onClick={toggle}
+      onKeyDown={(e) => e.key === "Enter" && toggle()}
+      role="button"
+      tabIndex={0}
       style={
         theme === "dark"
           ? { backgroundColor: "white" }

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./menuPosts.module.css";
+import PropTypes from "prop-types";
 
 export default function MenuPosts({ withImage }) {
   return (
@@ -85,3 +86,7 @@ export default function MenuPosts({ withImage }) {
     </div>
   );
 }
+
+MenuPosts.propTypes = {
+  withImage: PropTypes.bool.isRequired,
+};

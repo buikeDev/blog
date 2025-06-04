@@ -1,3 +1,48 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react", "jsx-a11y"],
+  "rules": {
+    // Image accessibility
+    "jsx-a11y/alt-text": "error",
+
+    // Prisma/DB related
+    "no-undef": "error",
+
+    // React specific
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+
+    // Server-side rendering checks
+    "no-restricted-globals": [
+      "error",
+      {
+        "name": "document",
+        "message": "Avoid direct 'document' usage. Use useEffect or dynamic imports for browser APIs."
+      },
+      {
+        "name": "window",
+        "message": "Avoid direct 'window' usage. Use useEffect or dynamic imports for browser APIs."
+      }
+    ],
+
+    // Destructuring safety
+    "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "prefer-const": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "ignorePatterns": ["src/generated/**/*"]
 }

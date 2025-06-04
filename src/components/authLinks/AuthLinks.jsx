@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./authLinks.module.css";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
+import React from "react";
 
 export default function AuthLinks() {
   const [open, setOpen] = useState(false);

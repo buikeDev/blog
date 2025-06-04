@@ -34,6 +34,7 @@ export default async function CategoryList() {
                   width={32}
                   height={32}
                   className={styles.image}
+                  alt={item.title}
                 />
               )}
               {item.title}
