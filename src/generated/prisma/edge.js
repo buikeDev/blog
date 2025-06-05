@@ -208,12 +208,11 @@ const config = {
     "db"
   ],
   "activeProvider": "mongodb",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "value": "mongodb+srv://agochukwubuikejideofor:lordswagg@cluster0.fhuap8h.mongodb.net/NemeBlog?retryWrites=true&w=majority&appName=Cluster0"
       }
     }
   },
