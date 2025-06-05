@@ -3,10 +3,14 @@ import React from "react";
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useState } from "react";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false, // This ensures ReactQuill is only loaded on the client
+});
 
 export default function WritePage() {
   const { status } = useSession();
