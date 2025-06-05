@@ -3,17 +3,16 @@ import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 
-// Create a new PrismaClient instance only when needed
-const getPrismaClient = () => {
-  if (process.env.NODE_ENV === "production") {
-    return new PrismaClient();
-  }
-  // In development, use a global variable to prevent multiple instances
-  if (!global.prisma) {
-    global.prisma = new PrismaClient();
-  }
-  return global.prisma;
-};
+// Prevent multiple instances of Prisma Client in development
+const globalForPrisma = globalThis;
+
+if (!globalForPrisma.prisma) {
+  globalForPrisma.prisma = new PrismaClient({
+    log: ["error", "warn"],
+  });
+}
+
+const prisma = globalForPrisma.prisma;
 
 export const authOptions = {
   providers: [
@@ -26,7 +25,7 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
-  adapter: PrismaAdapter(getPrismaClient()),
+  adapter: PrismaAdapter(prisma),
   session: {
     strategy: "jwt",
   },
