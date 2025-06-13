@@ -15,6 +15,7 @@ if (!globalForPrisma.prisma) {
 const prisma = globalForPrisma.prisma;
 
 export const authOptions = {
+  trustHost: true,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
