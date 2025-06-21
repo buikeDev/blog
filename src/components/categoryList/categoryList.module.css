@@ -20,22 +20,22 @@
   border-radius: 10px;
 }
 
-.category.dating {
+.category-relationship {
   background-color: #7fb881;
 }
-.category.fashion {
+.category-health {
   background-color: #57c4ff31;
 }
-.category.finance {
+.category-finance {
   background-color: #ffb14f;
 }
-.category.education {
+.category-education {
   background-color: #ff7887;
 }
-.category.culture {
+.category-culture {
   background-color: #57c4ff31;
 }
-.category.coding {
+.category-coding {
   background-color: #57c4ff31;
 }
 

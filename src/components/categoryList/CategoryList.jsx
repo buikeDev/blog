@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
-  const res = await fetch("https://blog-t9vn.vercel.app/api/categories", {
+  const res = await fetch("http://localhost:3000/api/categories", {
     cache: "no-store",
   });
   if (!res.ok) {
@@ -24,8 +24,8 @@ export default async function CategoryList() {
         {data?.map((item) => {
           return (
             <Link
-              href="/blog?cat=style"
-              className={`${styles.category} ${styles[item.slug]}`}
+              href={`/blog?cat=${item.slug.current}`}
+              className={`${styles.category} ${styles["category-" + item.slug.current]}`}
               key={item._id}
             >
               {item.img && (
