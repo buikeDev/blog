@@ -9,6 +9,12 @@ export default function AuthLinks() {
   const [open, setOpen] = useState(false);
   // temporary
   const { status } = useSession();
+
+  // Close menu when clicking outside
+  const handleOverlayClick = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       {status === "unauthenticated" ? (
@@ -42,19 +48,32 @@ export default function AuthLinks() {
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
+
+      {/* Blur Overlay */}
       {open && (
-        <div className={styles.responsiveMenu}>
-          <Link href="/">Homepage</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
-          {status === "notauthenticated" ? (
-            <Link href="/login">Login</Link>
-          ) : (
-            <>
-              <Link href="/write">Write</Link>
-              <span className="link">Logout</span>
-            </>
-          )}
+        <div className={styles.overlay} onClick={handleOverlayClick}>
+          <div
+            className={styles.responsiveMenu}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Link href="/" onClick={() => setOpen(false)}>
+              Homepage
+            </Link>
+            <Link href="/about" onClick={() => setOpen(false)}>
+              About
+            </Link>
+            <Link href="/" onClick={() => setOpen(false)}>
+              Contact
+            </Link>
+            {/* {status === "notauthenticated" ? (
+              <Link href="/login">Login</Link>
+            ) : (
+              <>
+                <Link href="/write">Write</Link>
+                <span className="link">Logout</span>
+              </>
+            )} */}
+          </div>
         </div>
       )}
     </>

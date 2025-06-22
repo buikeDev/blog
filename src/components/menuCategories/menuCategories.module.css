@@ -12,15 +12,15 @@
   font-size: 14px;
 }
 
-.categoryItem.travel {
+.categoryItem-relationship {
   background-color: #ff7857;
 }
-.categoryItem.style {
+.categoryItem-finance {
   background-color: #ffb14f;
 }
-.categoryItem.food {
+.categoryItem-education {
   background-color: #7fb881;
 }
-.categoryItem.fashion {
+.categoryItem-health {
   background-color: #ff7887;
 }

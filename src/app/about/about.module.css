@@ -1,0 +1,275 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--textColor);
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--softTextColor);
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blog Section */
+.blogSection {
+  margin-bottom: 80px;
+}
+
+.blogContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.blogText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: var(--textColor);
+}
+
+.blogStats {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  background: var(--softBg);
+  border-radius: 15px;
+  height: fit-content;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+
+.stat p {
+  font-size: 1rem;
+  color: var(--softTextColor);
+  font-weight: 500;
+}
+
+/* Authors Section */
+.authorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.authorCard {
+  background: var(--softBg);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.authorCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.authorImageContainer {
+  margin-bottom: 25px;
+}
+
+.authorImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.authorName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--textColor);
+}
+
+.authorRole {
+  font-size: 1rem;
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.authorBio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--softTextColor);
+  margin-bottom: 20px;
+}
+
+.authorSocial {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.socialLink {
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.socialLink:hover {
+  background: #5a6fd8;
+}
+
+/* Contact Section */
+.contactSection {
+  text-align: center;
+  background: var(--softBg);
+  padding: 60px 40px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.contactText {
+  font-size: 1.1rem;
+  color: var(--softTextColor);
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactInfo {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.contactItem h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--textColor);
+}
+
+.contactItem p {
+  color: var(--softTextColor);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .blogContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .authorsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero {
+    padding: 80px 0 60px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .wrapper {
+    padding: 0 15px;
+  }
+
+  .authorCard {
+    padding: 20px;
+  }
+}

@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link href="/" className={styles.link}>
           Contacts
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/about" className={styles.link}>
           About
         </Link>
         <AuthLinks />

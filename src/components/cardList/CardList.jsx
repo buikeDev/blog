@@ -4,10 +4,13 @@ import Pagination from "../pagination/Pagination";
 import Card from "../card/Card";
 import PropTypes from "prop-types";
 
-const getData = async (page) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
-    cache: "no-store",
-  });
+const getData = async (page, cat) => {
+  const res = await fetch(
+    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    {
+      cache: "no-store",
+    }
+  );
   if (!res.ok) {
     throw new Error("Failed");
   }
@@ -15,8 +18,8 @@ const getData = async (page) => {
   return res.json();
 };
 
-export default async function CardList({ page }) {
-  const data = await getData(page);
+export default async function CardList({ page, cat }) {
+  const data = await getData(page, cat);
   const POST_PER_PAGE = 2;
 
   // Calculate total count from totalPages

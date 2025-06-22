@@ -13,9 +13,9 @@ export const GET = async (req) => {
     const POST_PER_PAGE = 2;
     const start = POST_PER_PAGE * (page - 1);
     const end = start + POST_PER_PAGE;
-
+    const cat = searchParams.get("cat");
     // GROQ query to fetch paginated posts
-    const postsQuery = `*[_type == "post"] | order(_createdAt desc) [${start}...${end}] {
+    const postsQuery = `*[_type == "post" ${cat ? `&& "${cat}" in categories[]->slug.current` : ""}] | order(_createdAt desc) [${start}...${end}] {
       _id,
       title,
       slug,
@@ -33,7 +33,7 @@ export const GET = async (req) => {
   }
     }`;
 
-    const countQuery = 'count(*[_type == "post"])';
+    const countQuery = `count(*[_type == "post" ${cat ? `&& "${cat}" in categories[]->slug.current` : ""}])`;
 
     const [posts, count] = await Promise.all([
       client.fetch(postsQuery),
