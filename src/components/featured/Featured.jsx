@@ -7,8 +7,8 @@ export default function Featured() {
     <div className={styles.container}>
       {/* {Title} */}
       <h1 className={styles.title}>
-        <b className={styles.bold}>Hey, such and such</b>, my stories are such
-        and creative and such
+        <b className={styles.bold}>Hey, such & such</b>, my stories are such and
+        creative and such
       </h1>
 
       {/* {Post for the Feature} */}
