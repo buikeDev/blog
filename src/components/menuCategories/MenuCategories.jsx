@@ -3,7 +3,8 @@ import React from "react";
 import styles from "./menuCategories.module.css";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const res = await fetch(`${baseUrl}/api/categories`, {
     cache: "no-store",
   });
   if (!res.ok) {

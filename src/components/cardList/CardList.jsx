@@ -5,14 +5,13 @@ import Card from "../card/Card";
 import PropTypes from "prop-types";
 
 const getData = async (page, cat) => {
-  const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const url = `${baseUrl}/api/posts?page=${page}&cat=${cat || ""}`;
+
+  const res = await fetch(url, { cache: "no-store" });
+
   if (!res.ok) {
-    throw new Error("Failed");
+    throw new Error("Failed to fetch posts");
   }
 
   return res.json();
