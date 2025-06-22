@@ -1,4 +1,4 @@
-import { client } from "../../../sanity/lib/client";
+import { client } from "../../../src/sanity/lib/client";
 
 export async function GET() {
   const siteUrl = "https://blog-t9vn.vercel.app";
