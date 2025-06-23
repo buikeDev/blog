@@ -1,10 +1,8 @@
 import { client } from "../../../sanity/lib/client";
 import { NextResponse } from "next/server";
 
-// Required to disable static generation
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
-export const revalidate = 0;
+// Revalidate every hour for posts
+export const revalidate = 3600;
 
 export const GET = async (req) => {
   try {
@@ -29,8 +27,8 @@ export const GET = async (req) => {
         alt
       },
       categories[]->{
-    title
-  }
+        title
+      }
     }`;
 
     const countQuery = `count(*[_type == "post" ${cat ? `&& "${cat}" in categories[]->slug.current` : ""}])`;
@@ -49,6 +47,9 @@ export const GET = async (req) => {
       },
       {
         status: 200,
+        headers: {
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=3600",
+        },
       }
     );
   } catch (err) {

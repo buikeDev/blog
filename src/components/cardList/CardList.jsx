@@ -8,7 +8,11 @@ const getData = async (page, cat) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
   const url = `${baseUrl}/api/posts?page=${page}&cat=${cat || ""}`;
 
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url, {
+    next: {
+      revalidate: 3600, // 1 hour
+    },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch posts");
@@ -43,4 +47,5 @@ export default async function CardList({ page, cat }) {
 
 CardList.propTypes = {
   page: PropTypes.number.isRequired,
+  cat: PropTypes.string,
 };

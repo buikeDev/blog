@@ -6,8 +6,11 @@ import Link from "next/link";
 const getData = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
   const res = await fetch(`${baseUrl}/api/categories`, {
-    cache: "no-store",
+    next: {
+      revalidate: 86400, // 24 hours
+    },
   });
+
   if (!res.ok) {
     throw new Error("Failed");
   }
@@ -20,7 +23,7 @@ export default async function CategoryList() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Porpular Categories</h1>
+      <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
         {data?.map((item) => {
           return (

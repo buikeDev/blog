@@ -13,7 +13,6 @@ export default function Card({ item }) {
     ? urlFor(item.mainImage).width(600).url()
     : "/default-image.jpg";
   {
-    console.log(item.mainImage);
   }
   return (
     <div className={styles.container}>

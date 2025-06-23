@@ -5,8 +5,11 @@ import styles from "./menuCategories.module.css";
 const getData = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
   const res = await fetch(`${baseUrl}/api/categories`, {
-    cache: "no-store",
+    next: {
+      revalidate: 86400, // 24 hours
+    },
   });
+
   if (!res.ok) {
     throw new Error("Failed");
   }
