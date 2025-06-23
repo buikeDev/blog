@@ -39,10 +39,12 @@ export default function Card({ item }) {
           </span>
           <span className={styles.category}>{item.categories?.[0]?.title}</span>
         </div>
-        <Link href={`/posts/${item.slug.current}`}>
+        <Link href={`/posts/${item.slug.current}`} className={styles.titleLink}>
           <h1 className={styles.title}>{item.title}</h1>
         </Link>
-        <p className={styles.desc}>{shortText}</p>
+        <Link href={`/posts/${item.slug.current}`}>
+          <p className={styles.desc}>{shortText}</p>
+        </Link>
         <Link href={`/posts/${item.slug.current}`} className={styles.link}>
           Read More
         </Link>

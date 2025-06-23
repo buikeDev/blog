@@ -21,14 +21,6 @@
     backdrop-filter 0.3s;
 }
 
-/* Hover/focus effect for .textContainer on .container hover/focus */
-.container:hover .textContainer,
-.container:focus-within .textContainer {
-  background: rgba(80, 80, 80, 0.35);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
-}
-
 .image {
   object-fit: cover;
 }
