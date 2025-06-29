@@ -189,7 +189,7 @@ export default async function SinglePage({ params }) {
               />
             </aside>
           </section>
-          <aside>
+          <aside className={styles.aside}>
             <Menu />
           </aside>
         </div>

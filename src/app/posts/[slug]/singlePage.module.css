@@ -64,6 +64,10 @@
   margin-top: 60px;
 }
 
+.aside {
+  flex: 2;
+}
+
 .description p {
   font-size: 20px;
   font-weight: 300;
@@ -95,6 +99,15 @@
   .imageContainer .image {
     width: 100%;
   }
+}
+
+.content {
+  flex-direction: column;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 1024px) {
