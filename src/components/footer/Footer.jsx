@@ -13,10 +13,9 @@ export default function Footer() {
         </div>
 
         <p className={styles.desc}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
-          amet quaerat quo accusantium et, maxime, neque deleniti deserunt eaque
-          iste facilis, voluptatem tenetur rerum quae minima illum porro
-          aspernatur aliquid.
+          Nemeblog is a platform for learning and growing. Relax while we
+          journey together hand in hand on our journey of exploration and
+          learning
         </p>
         <div className={styles.icons}>
           <Image src="/facebook.png" alt="facebook" width={18} height={18} />

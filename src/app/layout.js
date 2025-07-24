@@ -14,6 +14,11 @@ export const metadata = {
   title: "Blog App – Stories & Insights",
   description:
     "A modern blog sharing stories, insights, and perspectives that matter. Explore articles on tech, travel, culture, and more.",
+  icons: {
+    icon: "/nemeblog.ico",
+    shortcut: "/nemeblog.ico",
+    apple: "/nemeblog.ico",
+  },
   openGraph: {
     title: "Blog App – Stories & Insights",
     description:
@@ -22,7 +27,7 @@ export const metadata = {
     siteName: "Blog App",
     images: [
       {
-        url: "/favicon.ico", // fallback, update when you have a social image
+        url: "/nemeblog.ico",
         width: 1200,
         height: 630,
         alt: "Blog App Logo",
@@ -36,10 +41,10 @@ export const metadata = {
     title: "Blog App – Stories & Insights",
     description:
       "A modern blog sharing stories, insights, and perspectives that matter. Explore articles on tech, travel, culture, and more.",
-    site: "@yourtwitter", // update when you have a Twitter handle
+    site: "https://x.com/bkem_der_brainy?s=21", // update when you have a Twitter handle
     images: [
       {
-        url: "/favicon.ico",
+        url: "/nemeblog.ico",
         alt: "Blog App Logo",
       },
     ],
@@ -50,6 +55,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/nemeblog.ico" />
+        <link rel="shortcut icon" href="/nemeblog.ico" />
+        <link rel="apple-touch-icon" href="/nemeblog.ico" />
+      </head>
       <body className={inter.className}>
         <AuthProvider>
           <ThemeContextProvider>
