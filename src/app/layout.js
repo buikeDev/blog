@@ -56,9 +56,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/nemeblog.ico" />
-        <link rel="shortcut icon" href="/nemeblog.ico" />
-        <link rel="apple-touch-icon" href="/nemeblog.ico" />
+        <link rel="icon" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
       </head>
       <body className={inter.className}>
         <AuthProvider>
