@@ -10,7 +10,7 @@ const getData = async (page, cat) => {
 
   const res = await fetch(url, {
     next: {
-      revalidate: 3600, // 1 hour
+      revalidate: 30,
     },
   });
 
