@@ -1,34 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+NemeBlog is a modern content publishing platform built to support thought leadership, storytelling, and monetization. It is a client-owned blog application designed for general readers, featuring a clean UI, structured content delivery, and scalable architecture.
 
-## Getting Started
+The application is live and deployed on Vercel.
 
-First, run the development server:
+🔗 Live Site: https://nemeblog.com
 
-```bash
+📌 Project Overview
+
+NemeBlog is a production-grade blog platform that allows administrators to publish and manage content through an integrated headless CMS. The platform supports pagination, SEO-friendly content delivery, authentication, and theme switching, with a strong focus on performance and readability.
+
+🛠 Technology Stack
+
+Framework: Next.js
+
+Language: JavaScript / TypeScript
+
+Styling: CSS Modules
+
+CMS: Sanity.io (Admin Panel Integrated)
+
+Database: PostgreSQL
+
+Authentication: Google OAuth
+
+State Management: React useState + Custom Context (Dark/Light Mode)
+
+Hosting: Vercel
+
+Domain: Namecheap
+
+Package Manager: npm
+
+✨ Core Features
+
+Content publishing via Sanity CMS
+
+Admin-only content management
+
+Blog post pagination
+
+SEO-friendly pages
+
+Google OAuth authentication
+
+Dark and light mode toggle
+
+Responsive design across all devices
+
+Clean, minimal UI optimized for reading
+
+Monetization-ready structure
+
+🧩 Content Management
+
+Blog content is managed through Sanity.io
+
+Admin-only publishing access
+
+Fully integrated Sanity Studio admin panel
+
+🚀 Local Development Setup
+
+To run the project locally:
+
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Environment Variables
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This project requires environment variables for:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Sanity configuration
 
-## Learn More
+Google OAuth
 
-To learn more about Next.js, take a look at the following resources:
+Database connection
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+(Refer to .env.example if provided.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+📁 Project Type & Ownership
 
-## Deploy on Vercel
+Project Type: Client project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ownership: Client-owned
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributors: Single developer
+
+📄 License
+
+MIT License
+Permits free use, modification, and distribution with attribution.
+
+👨‍💻 Developer
+
+Ago Chukwubuikem Jideofor
+GitHub: https://github.com/buikeDev/
+
+📊 Project Status
+
+80% Completed
