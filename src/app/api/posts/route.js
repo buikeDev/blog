@@ -8,7 +8,7 @@ export const GET = async (req) => {
   try {
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get("page")) || 1;
-    const POST_PER_PAGE = 2;
+    const POST_PER_PAGE = 8;
     const start = POST_PER_PAGE * (page - 1);
     const end = start + POST_PER_PAGE;
     const cat = searchParams.get("cat");

@@ -28,15 +28,6 @@ export default async function MenuCategories() {
             className={`${styles.categoryItem} ${styles["categoryItem-" + item.slug.current]}`}
             key={item._id}
           >
-            {item.img && (
-              <Image
-                src={item.img}
-                width={32}
-                height={32}
-                className={styles.image}
-                alt={item.title}
-              />
-            )}
             {item.title}
           </Link>
         );

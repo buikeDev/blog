@@ -1,0 +1,53 @@
+.container {
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--softBg);
+}
+
+.title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--softTextColor);
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--softBg);
+  transition: color 0.2s ease;
+}
+
+.item:first-child {
+  border-top: 1px solid var(--softBg);
+}
+
+.itemTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--textColor);
+  transition: color 0.2s ease;
+}
+
+.item:hover .itemTitle {
+  color: teal;
+}
+
+.arrow {
+  font-size: 13px;
+  color: var(--softTextColor);
+  margin-top: 4px;
+  display: block;
+}

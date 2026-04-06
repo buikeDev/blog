@@ -15,8 +15,7 @@ export const GET = async () => {
         "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=86400",
       },
     });
-  } catch (err) {
-    console.log(err);
+  } catch {
     return new NextResponse(
       JSON.stringify({ message: "Something went wrong!" }),
       { status: 500 }

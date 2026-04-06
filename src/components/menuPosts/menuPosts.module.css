@@ -78,3 +78,17 @@
 .date {
   color: grey;
 }
+
+.views {
+  color: teal;
+  font-weight: 500;
+}
+
+.rank {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--softBg);
+  min-width: 32px;
+  text-align: center;
+  line-height: 1;
+}

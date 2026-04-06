@@ -1,68 +1,51 @@
+.container {
+  padding: 40px 0 32px;
+}
+
 .title {
-  margin: 50px 0px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--softTextColor);
+  margin-bottom: 16px;
 }
 
 .categories {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
 }
 
 .category {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  padding: 7px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1.5px solid var(--softBg);
+  color: var(--textColor);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   text-transform: capitalize;
-  width: 15%;
-  height: 80px;
-  justify-content: center;
-  border-radius: 10px;
 }
 
-.category-relationship {
-  background-color: #7fb881;
-}
-.category-health {
-  background-color: #57c4ff31;
-}
-.category-finance {
-  background-color: #ffb14f;
-}
-.category-education {
-  background-color: #ff7887;
-}
-.category-culture {
-  background-color: #57c4ff31;
-}
-.category-featured {
-  background-color: #57c4ff31;
+.category:hover {
+  border-color: var(--textColor);
 }
 
-.image {
-  border-radius: 50%;
-}
+.category-relationship { border-color: #7fb88166; }
+.category-relationship:hover { background-color: #7fb88122; border-color: #7fb881; }
 
-@media screen and (max-width: 1280px) {
-  .category {
-    width: 20%;
-  }
-}
+.category-health { border-color: #57c4ff55; }
+.category-health:hover { background-color: #57c4ff11; border-color: #57c4ff; }
 
-@media screen and (max-width: 1024px) {
-  .category {
-    width: 25%;
-  }
-}
+.category-finance { border-color: #ffb14f66; }
+.category-finance:hover { background-color: #ffb14f11; border-color: #ffb14f; }
 
-@media screen and (max-width: 768px) {
-  .category {
-    width: 45%;
-  }
-}
+.category-education { border-color: #ff788766; }
+.category-education:hover { background-color: #ff788711; border-color: #ff7887; }
 
-@media screen and (max-width: 640px) {
-  .category {
-    width: 100%;
-  }
-}
+.category-culture { border-color: #57c4ff55; }
+.category-culture:hover { background-color: #57c4ff11; border-color: #57c4ff; }
+
+.category-featured { border-color: #57c4ff55; }
+.category-featured:hover { background-color: #57c4ff11; border-color: #57c4ff; }

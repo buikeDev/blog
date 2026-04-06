@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AuthLinks from "../authLinks/AuthLinks";
 import ThemeToggle from "../themeToggle/ThemeToggle";
+import SearchModal from "../search/SearchModal";
 
 export default function Navbar() {
   return (
@@ -16,6 +17,7 @@ export default function Navbar() {
       </div>
       <div className={styles.logo}>NemeBlog</div>
       <div className={styles.links}>
+        <SearchModal />
         <ThemeToggle />
         <Link href="/" className={styles.link}>
           Home

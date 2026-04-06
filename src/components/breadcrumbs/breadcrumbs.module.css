@@ -1,0 +1,42 @@
+.nav {
+  margin-bottom: 28px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 4px;
+}
+
+.link {
+  font-size: 13px;
+  font-weight: 500;
+  color: teal;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #006666;
+}
+
+.current {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--softTextColor);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
+
+.separator {
+  font-size: 13px;
+  color: var(--softTextColor);
+  opacity: 0.4;
+  padding: 0 4px;
+  user-select: none;
+}

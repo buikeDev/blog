@@ -3,5 +3,25 @@
 }
 
 .title {
-  margin: 50px 0px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--softTextColor);
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--softBg);
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 36px;
+}
+
+@media screen and (max-width: 1024px) {
+  .posts {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }

@@ -9,7 +9,7 @@ export default function Menu() {
       {/* {Most Popular section} */}
       <h2 className={styles.subtitle}>{"What's Popular"}</h2>
       <h1 className={styles.title}>Most Popular</h1>
-      <MenuPosts withImage={false} />
+      <MenuPosts withImage={false} sortBy="viewCount" />
       {/* {Categories} */}
       <h2 className={styles.subtitle}>{"Discover by topic"}</h2>
       <h1 className={styles.title}>Categories</h1>

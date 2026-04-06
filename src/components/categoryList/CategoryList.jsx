@@ -1,14 +1,11 @@
 import React from "react";
 import styles from "./categoryList.module.css";
-import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
   const res = await fetch(`${baseUrl}/api/categories`, {
-    next: {
-      revalidate: 86400, // 24 hours
-    },
+    next: { revalidate: 86400 },
   });
 
   if (!res.ok) {
@@ -23,28 +20,17 @@ export default async function CategoryList() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Popular Categories</h1>
+      <p className={styles.title}>Browse by topic</p>
       <div className={styles.categories}>
-        {data?.map((item) => {
-          return (
-            <Link
-              href={`/blog?cat=${item.slug.current}`}
-              className={`${styles.category} ${styles["category-" + item.slug.current]}`}
-              key={item._id}
-            >
-              {item.img && (
-                <Image
-                  src={item.img}
-                  width={32}
-                  height={32}
-                  className={styles.image}
-                  alt={item.title}
-                />
-              )}
-              {item.title}
-            </Link>
-          );
-        })}
+        {data?.map((item) => (
+          <Link
+            href={`/blog?cat=${item.slug.current}`}
+            className={`${styles.category} ${styles["category-" + item.slug.current]}`}
+            key={item._id}
+          >
+            {item.title}
+          </Link>
+        ))}
       </div>
     </div>
   );

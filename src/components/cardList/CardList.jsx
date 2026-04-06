@@ -23,7 +23,7 @@ const getData = async (page, cat) => {
 
 export default async function CardList({ page, cat }) {
   const data = await getData(page, cat);
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 8;
 
   // Calculate total count from totalPages
   const totalCount = data.totalPages * POST_PER_PAGE;
@@ -34,7 +34,7 @@ export default async function CardList({ page, cat }) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Recent Posts</h1>
+      <p className={styles.title}>Recent Posts</p>
       <div className={styles.posts}>
         {data?.posts?.map((item) => (
           <Card item={item} key={item._id} />

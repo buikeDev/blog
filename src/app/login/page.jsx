@@ -4,8 +4,7 @@ import { signIn, useSession } from "next-auth/react";
 import styles from "./loginPage.module.css";
 import { useRouter } from "next/navigation";
 export default function LoginPage() {
-  const { data, status } = useSession();
-  console.log(data, status);
+  const { status } = useSession();
 
   const router = useRouter();
 

@@ -7,7 +7,6 @@ import React from "react";
 
 export default function AuthLinks() {
   const [open, setOpen] = useState(false);
-  // temporary
   const { status } = useSession();
 
   // Close menu when clicking outside
@@ -23,9 +22,6 @@ export default function AuthLinks() {
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
-            Write
-          </Link>
           <span
             className={styles.link}
             onClick={signOut}

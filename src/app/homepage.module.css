@@ -1,4 +1,22 @@
+.continer {
+  padding-bottom: 80px;
+}
+
 .content {
   display: flex;
-  gap: 50px;
+  gap: 64px;
+  margin-top: 48px;
+}
+
+@media screen and (max-width: 1024px) {
+  .content {
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 48px;
+  }
 }

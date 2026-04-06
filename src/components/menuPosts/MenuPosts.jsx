@@ -6,57 +6,41 @@ import PropTypes from "prop-types";
 import { client } from "../../sanity/lib/client";
 import { urlFor } from "../../sanity/lib/image";
 
-// Function to get posts data from Sanity
-const getData = async () => {
-  const query = `*[_type == "post"] | order(_createdAt desc) [0...5] {
+const getData = async (sortBy) => {
+  const order = sortBy === "viewCount"
+    ? "order(viewCount desc)"
+    : "order(_createdAt desc)";
+
+  const query = `*[_type == "post"] | ${order} [0...5] {
     _id,
     title,
     slug,
     _createdAt,
+    viewCount,
     mainImage {
-      asset->{
-        _id,
-        url
-      },
+      asset->{ _id, url },
       alt
     },
-    categories[]->{
-      title,
-      slug
-    },
-    author->{
-      name,
-      image {
-        asset->{
-          _id,
-          url
-        }
-      }
-    }
+    categories[]->{ title, slug },
+    author->{ name }
   }`;
 
-  const posts = await client.fetch(query);
-  return posts;
+  return client.fetch(query);
 };
 
-export default async function MenuPosts({ withImage }) {
-  const posts = await getData();
+export default async function MenuPosts({ withImage, sortBy = "date" }) {
+  const posts = await getData(sortBy);
 
   return (
     <div className={styles.items}>
-      {posts?.map((post) => {
+      {posts?.map((post, index) => {
         const imageUrl = post.mainImage
           ? urlFor(post.mainImage).width(100).height(100).url()
           : "/default-image.jpg";
-
         const categorySlug = post.categories?.[0]?.slug?.current || "general";
 
         return (
-          <Link
-            href={`/posts/${post.slug.current}`}
-            className={styles.item}
-            key={post._id}
-          >
+          <Link href={`/posts/${post.slug.current}`} className={styles.item} key={post._id}>
             {withImage && (
               <div className={styles.imageContainer}>
                 <Image
@@ -67,25 +51,32 @@ export default async function MenuPosts({ withImage }) {
                 />
               </div>
             )}
+            {!withImage && sortBy === "viewCount" && (
+              <span className={styles.rank}>#{index + 1}</span>
+            )}
             <div className={styles.textContainer}>
               <span className={`${styles.category} ${styles[categorySlug]}`}>
                 {post.categories?.[0]?.title || "General"}
               </span>
               <h3 className={styles.postTitle}>{post.title}</h3>
-
               <div className={styles.details}>
                 <span className={styles.username}>
                   {post.author?.name || "Anonymous"}
                 </span>
-                <span className={styles.date}>
-                  {" "}
-                  -{" "}
-                  {new Date(post._createdAt).toLocaleDateString("en-US", {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                  })}
-                </span>
+                {sortBy === "viewCount" ? (
+                  <span className={styles.views}>
+                    {" · "}{post.viewCount ?? 0} views
+                  </span>
+                ) : (
+                  <span className={styles.date}>
+                    {" - "}
+                    {new Date(post._createdAt).toLocaleDateString("en-US", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                  </span>
+                )}
               </div>
             </div>
           </Link>
@@ -97,4 +88,5 @@ export default async function MenuPosts({ withImage }) {
 
 MenuPosts.propTypes = {
   withImage: PropTypes.bool.isRequired,
+  sortBy: PropTypes.oneOf(["date", "viewCount"]),
 };
