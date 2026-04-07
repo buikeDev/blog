@@ -71,6 +71,7 @@ export default async function SearchPage({ searchParams }) {
                       src={imageUrl}
                       alt={post.mainImage?.alt || post.title}
                       fill
+                      sizes="120px"
                       className={styles.thumbImg}
                     />
                   </div>

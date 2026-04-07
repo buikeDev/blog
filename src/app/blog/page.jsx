@@ -4,9 +4,9 @@ import CardList from "@/components/cardList/CardList";
 import Menu from "@/components/menu/Menu";
 
 export default async function Blogpage(props) {
-  const { searchParams } = await props;
-  const page = parseInt(searchParams.page) || 1;
-  const { cat } = searchParams;
+  const searchParams = await props.searchParams;
+  const page = parseInt(searchParams?.page) || 1;
+  const cat = searchParams?.cat;
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{cat} Blog</h1>

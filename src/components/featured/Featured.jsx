@@ -83,6 +83,7 @@ export default async function Featured() {
               src={imageUrl}
               alt={post.mainImage?.alt || post.title}
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className={styles.image}
             />
           </div>

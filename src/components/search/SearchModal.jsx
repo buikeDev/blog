@@ -132,6 +132,7 @@ export default function SearchModal() {
                             src={post.mainImage.asset.url}
                             alt={post.mainImage.alt || post.title}
                             fill
+                            sizes="52px"
                             className={styles.thumbImg}
                           />
                         </div>

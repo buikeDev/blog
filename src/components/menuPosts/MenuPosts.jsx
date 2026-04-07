@@ -47,6 +47,7 @@ export default async function MenuPosts({ withImage, sortBy = "date" }) {
                   src={imageUrl}
                   alt={post.mainImage?.alt || post.title}
                   fill
+                  sizes="80px"
                   className={styles.image}
                 />
               </div>

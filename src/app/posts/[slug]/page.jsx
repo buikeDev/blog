@@ -32,7 +32,8 @@ const getData = async (slug) => {
 };
 
 export async function generateMetadata({ params }) {
-  const post = await getData(params.slug);
+  const { slug } = await params;
+  const post = await getData(slug);
   if (!post) return {};
   const siteUrl = "https://blog-t9vn.vercel.app";
   const postUrl = `${siteUrl}/posts/${post.slug.current}`;
@@ -82,7 +83,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function SinglePage({ params }) {
-  const post = await getData(params.slug);
+  const { slug } = await params;
+  const post = await getData(slug);
   if (!post) return <div>Post not found</div>;
 
   const imageUrl = post.mainImage
@@ -139,6 +141,7 @@ export default async function SinglePage({ params }) {
                 src={authorImageUrl}
                 alt={post.author?.name || "Author"}
                 fill
+                sizes="44px"
                 className={styles.authorImage}
               />
             </div>
@@ -161,6 +164,7 @@ export default async function SinglePage({ params }) {
             src={imageUrl}
             alt={post.mainImage?.alt || post.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
             className={styles.heroImg}
             priority
           />

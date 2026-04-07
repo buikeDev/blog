@@ -8,8 +8,8 @@ import AdUnit from "../components/ads/AdUnit";
 import PropTypes from "prop-types";
 
 export default async function Home(props) {
-  const { searchParams } = await props;
-  const page = parseInt(searchParams.page) || 1;
+  const searchParams = await props.searchParams;
+  const page = parseInt(searchParams?.page) || 1;
 
   return (
     <div className={styles.continer}>
